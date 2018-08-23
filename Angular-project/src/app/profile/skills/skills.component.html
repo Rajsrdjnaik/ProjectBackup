@@ -1,0 +1,48 @@
+<div *ngIf="skills_check">
+  <div class="card">
+    <div class="card-body">
+      <h2>Skills</h2>
+      Profile Id: {{getPost_Skill.profileId}}
+      <br> Skill: {{getPost_Skill.skill}}
+      <br> Level: {{getPost_Skill.level}}
+      <br> Duration: {{getPost_Skill.noOfMonths}}
+      <br> Further Usage: {{getPost_Skill.furtherUsage}}
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Skills</h4>
+        <button class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+      <!-- end modal-header -->
+      <div class="modal-body">
+        <form class="form-horizontal" (submit)="addPost_Skill()">
+          <div class="form-group">
+            <input class="form-control" placeholder="Skill" type="text" [(ngModel)]="newPost_Skill.skill" [ngModelOptions]="{standalone: true}" name="skill">
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Level" type="number" [(ngModel)]="newPost_Skill.level" [ngModelOptions]="{standalone: true}" name="level">
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Duration" type="number" [(ngModel)]="newPost_Skill.noOfMonths" [ngModelOptions]="{standalone: true}" name="months">
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Further usage" type="text" [(ngModel)]="newPost_Skill.furtherUsage" [ngModelOptions]="{standalone: true}" name="use">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary pull-right submitbtn" type="submit" onclick="this.form.reset();">Add</button>
+          </div>
+        </form>
+      </div>
+      <!-- end modal-body -->
+    </div>
+    <!-- end modal-content -->
+  </div>
+  <!-- end modal-dialog -->
+</div>
+<!-- end myModal -->
